@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartGuard Predictor</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/substyles.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <h3 class="navh3"><a href="/">VitalPulse Analytics</a></h3>
+        </div>
+        <div class="navend">
+            <a href="/" class="navtext">Home</a>
+            <a href="/aboutme" class="navtext">About</a>
+            <a href="/#services" class="navtext">Services</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="in-heading">
+            <h2>HeartGuard Predictor</h2>
+        </div>
+        <div class="in-text-img">
+            <div class="in-text">
+                <h3>At VitalPulse Analytics, our HeartGuard Predictor is your proactive shield against heart issues. Gain personalized insights today. Fill in the information below for estimated insurance premiums and prioritize your heart's well-being.</h3>
+            </div>
+            <div class="in-img">
+                <img class="insurance-image" src="./static/images/heartguardpage.png">
+            </div>
+        </div>
+        <div class="in-input-output">
+            <form id="myForm">
+                            <!-- Age -->
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required placeholder="Enter your age">
+
+                <!-- Sex -->
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+
+                <!-- Chest Pain Type -->
+                <label for="chestPainType">Chest Pain Type:</label>
+                <select id="chestPainType" name="chestPainType" required>
+                    <option value="0">Typical Angina</option>
+                    <option value="1">Atypical Angina</option>
+                    <option value="2">Non-Anginal Pain</option>
+                    <option value="3">Asymptomatic</option>
+                </select>
+
+                <!-- Resting Blood Pressure -->
+                <label for="restingBP">Resting Blood Pressure:</label>
+                <input type="text" id="restingBP" name="restingBP" required pattern="\d*" placeholder="Enter resting blood pressure">
+
+                <!-- Cholesterol -->
+                <label for="cholesterol">Cholesterol:</label>
+                <input type="text" id="cholesterol" name="cholesterol" required pattern="\d*" placeholder="Enter cholesterol level">
+
+                <!-- Fasting Blood Sugar -->
+                <label for="fastingBS">Fasting Blood Sugar:</label>
+                <input type="text" id="fastingBS" name="fastingBS" required pattern="\d*" placeholder="Enter fasting blood sugar level">
+
+                <!-- Resting ECG -->
+                <label for="restingECG">Resting ECG:</label>
+                <select id="restingECG" name="restingECG" required>
+                    <option value="Normal">Normal</option>
+                    <option value="ST">ST</option>
+                    <option value="LVH">LVH</option>
+                </select>
+
+                <!-- Maximum Heart Rate Achieved -->
+                <label for="maxHR">Max Heart Rate:</label>
+                <input type="text" id="maxHR" name="maxHR" required pattern="\d*" placeholder="Enter maximum heart rate achieved">
+
+                <!-- Exercise-Induced Angina -->
+                <label for="exerciseAngina">Exercise-Induced Angina:</label>
+                <select id="exerciseAngina" name="exerciseAngina" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <!-- Oldpeak (ST depression induced by exercise) -->
+                <label for="oldpeak">Oldpeak:</label>
+                <input type="text" id="oldpeak" name="oldpeak" required pattern="\d*\.?\d*" placeholder="Enter oldpeak value">
+
+                <!-- ST Slope -->
+                <label for="stSlope">ST Slope:</label>
+                <select id="stSlope" name="stSlope" required>
+                    <option value="Up">Up-Sloping</option>
+                    <option value="Flat">Flat</option>
+                    <option value="Down">Down-Sloping</option>
+                </select>
+
+                <!-- Submit Button -->
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+            <div class="in-answer">
+                <h2 id="response">Get your personalized estimate now!</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            const formData = new FormData(document.getElementById('myForm'));
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById('response').innerHTML = xhr.responseText;
+                    } else {
+                        document.getElementById('response').innerHTML = "Uh Oh! There seems to have been an Error.";
+                        console.error('Request failed');
+                    }
+                }
+            };
+
+            xhr.open('POST', '/process3', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(new URLSearchParams(formData).toString());
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0px;
+    border: 0px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+/* Navbar */
+
+.navh3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: calc(1rem + 0.25vw);
+}
+
+nav {
+    height: 7vh;
+    width: 100%;
+    background-color: #01151bf8;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar,
+.navend {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1.75vh;
+    width: 45%;
+    gap: 5%;
+}
+
+.navbar {
+    margin-left: 5vw;
+}
+
+.navend {
+    justify-content: flex-end;
+    padding-top: 2.5vh;
+}
+
+h1 {
+    color: rgb(230, 181, 181);
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(1.5rem + 1.5vw);
+}
+
+h2 {
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+    line-height: 1.6;
+}
+
+.container-txt a{
+    color: orange;
+}
+
+.container-txt a:visited{
+    color: rgb(206, 76, 76);
+}
+
+.title-container {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-box {
+    text-align: center;
+    height: 13.5vh;
+    position: fixed;
+    z-index: -1;
+    padding-bottom: 35px;
+}
+
+.title-container::before {
+    content: "";
+    background: url("./images/ecg.gif");
+    background-size: cover; /* or background-size: contain; */
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    z-index: -2;
+}
+
+.subtitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: calc(18px + 0.4vw);
+}
+
+.display-text {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(241, 219, 219);
+    align-items: center;
+}
+
+.displaytxt{
+    font-size: calc(16px + 0.5vw);
+    padding: 20px;
+    text-align: center;
+}
+
+.text-bar {
+    /* height: 20vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250, 229, 229);
+    padding-bottom: 3px;
+    
+}
+
+.text-bar-txt {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 35px;
+    padding: 20px;
+}
+
+.insight {
+    height: auto;
+    width: 100%;
+    background-color: rgb(250, 229, 229);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insight-title {
+    /* height: 10vh; */
+    width: 80%;
+    background-color: rgb(250, 229, 229);
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.insight-text {
+    width: 80%;
+    height: auto;
+    background-color: rgb(250, 210, 210);
+    margin-top: 4vh;
+    margin-bottom: 5vh;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    width: 450px;
+    height: 46vh;
+    background-color: #fff;
+    border-radius: 40px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.card:hover {
+    width: 80%;
+    /* Change width to expand horizontally */
+}
+
+.card-content {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.card img {
+    width: 450px;
+    height: auto;
+}
+
+.banner-txt{
+    color: #eaadad;
+}
+
+.insurance {
+    height: auto;
+    width: 100%;
+    background-color: rgb(250, 229, 229);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.text-and-image {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(250, 210, 210);
+    padding: 15px;
+    border-radius: 20px;
+    gap: 5%;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.ins-text {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.ins-image-container {
+    /* width: 35%; */
+    height: 250px;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+}
+
+.ins-image-container:hover {
+    height: auto;
+    /* Change width to height to allow dynamic expansion */
+}
+
+.ins-image {
+    height: 250px;
+    width: 250px;
+}
+
+.ins-image-content {
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.bx {
+    font-size: 45px;
+}
+
+footer {
+    /* height: 9vh; */
+    width: 100%;
+    background-color: rgb(250, 229, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7vh;
+    padding-bottom: 4vh;
+}
+
+.footer-container {
+    width: 55%;
+    height: 100%;
+    /* background-color: lightgrey; */
+}
+
+.icon-img {
+    height: 4vh;
+    transform: translateY(0);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.navtext{
+    transform: translateY(0);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: calc(0.7rem + 0.25vw);
+}
+
+a{
+    color: white;
+}
+
+a:visited {
+    color: #ffbcbc;
+}
+
+.icon-img:hover, .navtext:hover {
+    transform: translateY(-5px);
+}
+
+.bw {
+    filter: grayscale(100%);
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.bw:hover {
+    filter: grayscale(0%);
+}
+
+.invert:hover {
+    filter: invert(0);
+}
+
+a {
+    text-decoration: none;
+}
+
+.github {
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding-bottom: 2vh;
+    height: 4vh;
+}
+
+.credits {
+    display: flex;
+    justify-content: center;
+}
+
+.bxs-magic-wand {
+    font-size: 1em;
+}
+
+.container-txt{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.card-text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: calc(8px + 0.8vw);
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.colortxt{
+    color: #db5a5a;
+}
+
+.try-now{
+    font-size: large;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 599px){
+    .card{
+        width: 350px;
+        height: 30vh;
+    }
+
+    .card img{
+        width: 350px;
+    }
+
+    .text-and-image{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ins-text{
+        order : 2;
+        width: 100%;
+    }
+    .ins-image-container{
+        order: 1;
+    }
+
+    .card:hover {
+        width: 350px;
+        /* Change width to expand horizontally */
+    }
+
+    .ins-image-container:hover {
+        height: 250px;
+        /* Change width to height to allow dynamic expansion */
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    .card{
+        width: 375px;
+        height: 44vh;
+    }
+
+    .card img{
+        width: 375px;
+    }
+
+    .text-and-image{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ins-text{
+        order : 2;
+        width: 100%;
+    }
+    .ins-image-container{
+        order: 1;
+    }
+
+    .card:hover {
+        width: 375px
+        /* Change width to expand horizontally */
+    }
+
+    .ins-image-container:hover {
+        height: 250px;
+        /* Change width to height to allow dynamic expansion */
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .card{
+        width: 375px;
+        height: 44vh;
+    }
+
+    .card img{
+        width: 375px;
+    }
+
+    .text-and-image{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ins-text{
+        order : 2;
+        width: 100%;
+    }
+    .ins-image-container{
+        order: 1;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+}

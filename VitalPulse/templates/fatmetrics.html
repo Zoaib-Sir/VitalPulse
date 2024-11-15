@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BodyVitality Gauge</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/substyles.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <h3 class="navh3"><a href="/">VitalPulse Analytics</a></h3>
+        </div>
+        <div class="navend">
+            <a href="/" class="navtext">Home</a>
+            <a href="/aboutme" class="navtext">About</a>
+            <a href="/#services" class="navtext">Services</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="in-heading">
+            <h2>BodyVitality Gauge</h2>
+        </div>
+        <div class="in-text-img">
+            <div class="in-text">
+                <h3>At VitalPulse Analytics, the BodyVitality Gauge is your key to heart health. Uncover your body fat percentage for a healthier you. Fill in the information below for your personalized assessment.</h3>
+            </div>
+            <div class="in-img">
+                <img class="insurance-image" src="./static/images/bodyfatpage.jpg">
+            </div>
+        </div>
+        <div class="in-input-output">
+            <form id="myForm">
+                <!-- Density -->
+                <label for="density">Density:</label>
+                <input type="text" id="density" name="density" required>
+
+                <!-- Age (years) -->
+                <label for="age">Age (years):</label>
+                <input type="number" id="age" name="age" required>
+
+                <!-- Weight (lbs) -->
+                <label for="weight">Weight (lbs):</label>
+                <input type="number" id="weight" name="weight" required>
+
+                <!-- Height (inches) -->
+                <label for="height">Height (inches):</label>
+                <input type="number" id="height" name="height" required>
+
+                <!-- Neck circumference (cm) -->
+                <label for="neck">Neck circumference (cm):</label>
+                <input type="number" id="neck" name="neck" required>
+
+                <!-- Chest circumference (cm) -->
+                <label for="chest">Chest circumference (cm):</label>
+                <input type="number" id="chest" name="chest" required>
+
+                <!-- Abdomen circumference (cm) -->
+                <label for="abdomen">Abdomen circumference (cm):</label>
+                <input type="number" id="abdomen" name="abdomen" required>
+
+                <!-- Hip circumference (cm) -->
+                <label for="hip">Hip circumference (cm):</label>
+                <input type="number" id="hip" name="hip" required>
+
+                <!-- Thigh circumference (cm) -->
+                <label for="thigh">Thigh circumference (cm):</label>
+                <input type="number" id="thigh" name="thigh" required>
+
+                <!-- Knee circumference (cm) -->
+                <label for="knee">Knee circumference (cm):</label>
+                <input type="number" id="knee" name="knee" required>
+
+                <!-- Ankle circumference (cm) -->
+                <label for="ankle">Ankle circumference (cm):</label>
+                <input type="number" id="ankle" name="ankle" required>
+
+                <!-- Biceps circumference (cm) -->
+                <label for="biceps">Biceps circumference (cm):</label>
+                <input type="number" id="biceps" name="biceps" required>
+
+                <!-- Forearm circumference (cm) -->
+                <label for="forearm">Forearm circumference (cm):</label>
+                <input type="number" id="forearm" name="forearm" required>
+
+                <!-- Wrist circumference (cm) -->
+                <label for="wrist">Wrist circumference (cm):</label>
+                <input type="number" id="wrist" name="wrist" required>
+                
+                <!-- Submit Button -->
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+            <div class="in-answer">
+                <h2 id="response">Get your personalized estimate now!</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            const formData = new FormData(document.getElementById('myForm'));
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById('response').innerHTML = xhr.responseText;
+                    } else {
+                        document.getElementById('response').innerHTML = "Uh Oh! There seems to have been an Error.";
+                        console.error('Request failed');
+                    }
+                }
+            };
+
+            xhr.open('POST', '/process2', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(new URLSearchParams(formData).toString());
+        }
+    </script>
+</body>
+</html>

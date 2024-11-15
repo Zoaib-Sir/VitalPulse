@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsuranceGuard</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/substyles.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <h3 class="navh3"><a href="/">VitalPulse Analytics</a></h3>
+        </div>
+        <div class="navend">
+            <a href="/" class="navtext">Home</a>
+            <a href="/aboutme" class="navtext">About</a>
+            <a href="/#services" class="navtext">Services</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="in-heading">
+            <h2>InsuranceGuard Estimator</h2>
+        </div>
+        <div class="in-text-img">
+            <div class="in-text">
+                <h3>At VitalPulse Analytics, our InsuranceGuard Estimator is your compass to financial security. Assess your insurance premiums based on BMI and smoking status. Plan your healthier future now. Fill in the information below to receive your personalized estimate.</h3>
+            </div>
+            <div class="in-img">
+                <img class="insurance-image" src="./static/images/insurance-page.png">
+            </div>
+        </div>
+        <div class="in-input-output">
+            <form id="myForm">
+                <!-- Age Input -->
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+        
+                <!-- Sex Input -->
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+        
+                <!-- BMI Input -->
+                <label for="bmi">BMI:</label>
+                <input type="number" step="0.01" id="bmi" name="bmi" required>
+        
+                <!-- Children Input -->
+                <label for="children">Number of Children:</label>
+                <input type="number" id="children" name="children" required>
+        
+                <!-- Smoking Status Input -->
+                <label for="smokingStatus">Smoking Status:</label>
+                <select id="smokingStatus" name="smokingStatus" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+        
+                <!-- Submit Button -->
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+            <div class="in-answer">
+                <h2 id="response">Get your personalized estimate now!</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            const formData = new FormData(document.getElementById('myForm'));
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById('response').innerHTML = xhr.responseText;
+                    } else {
+                        document.getElementById('response').innerHTML = "Uh Oh! There seems to have been an Error.";
+                        console.error('Request failed');
+                    }
+                }
+            };
+
+            xhr.open('POST', '/process', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(new URLSearchParams(formData).toString());
+        }
+    </script>
+</body>
+</html>

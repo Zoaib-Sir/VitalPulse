@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutMe</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <style>
+        .me-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #183D3D;
+            min-height: 100vh;
+        }
+
+        .me-container2{
+            height: auto;
+            width: 60%;
+            background-color: #5C8374;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            gap: 20px;
+            margin: 26px;
+            border-radius: 25px;
+        }
+
+        .me-profile-img{
+            width: 205px;
+            height: 205px;
+            border-radius: 50%;
+        }
+
+        .me-text{
+            height: auto;
+            width: 90%;
+            background-color: #93B1A6;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        footer{
+            background-color: #5C8374;
+        }
+
+      /* Extra small devices (phones, 600px and down) */
+      @media screen and (max-width: 599px){
+          /* .me-container{
+            width: 90%;
+          } */
+
+          .me-container2{
+            width: 100%;
+          }
+
+          .me-text{
+            width: 100%;
+          }
+      }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <h3 class="navh3"><a href="/">VitalPulse Analytics</a></h3>
+        </div>
+        <div class="navend">
+            <a href="/" class="navtext">Home</a>
+            <a href="/aboutme" class="navtext">About</a>
+            <a href="/#services" class="navtext">Services</a>
+            <!-- <a href="#" class="navtext">Contact</a> -->
+        </div>
+    </nav>
+    <div class="me-container">
+        <div class="me-container2">
+            <img class="me-profile-img" src="./static/images/avatar.jpg">
+            <div class="me-text">
+                <h3>Hi! This is Md Zoaib Alam. I am a deeply passionate coder, who finds immense joy and fulfillment in the world of programming. Proficient in a diverse range of programming languages, my expertise particularly shines in Python, where I have cultivated a deep understanding and mastery. My enthusiasm extends into the realm of machine learning algorithms, where I have honed specialized knowledge. I am driven by a relentless curiosity, always eager to explore and implement innovative solutions. Coding isn't just a skill for me; it's a journey of continuous learning and creative problem-solving.<br>I hope you found the exploration of my project to be enjoyable and engaging.</h3>
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer-container">
+          <div class="icons">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="./static/images/icons/linkedin.png" alt="LinkedIn" class="icon-img bw">
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="./static/images/icons/github.png" alt="Github" class="icon-img github invert">
+            </a>
+            <a href="#" target="_blank">
+              <img src="./static/images/icons/twitter.webp" alt="Twitter" class="icon-img invert">
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="./static/images/icons/instagram.png" alt="Instagram" class="icon-img bw">
+            </a>
+          </div>
+          <div class="credits">
+            <p>&copy; harrypotter001 The Majestic Creation of Md Zoaib Alam. Crafted with Passion, Precision, and a Touch of
+              Magic <i class='bx bxs-magic-wand'></i>.</p>
+          </div>
+      </footer>
+</body>
+</html>
